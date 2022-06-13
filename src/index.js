@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import CustomSearch from "./CustomSearch/CustomSearch";
+import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <React.StrictMode>
-    <CustomSearch />
+    <App />
   </React.StrictMode>
 );

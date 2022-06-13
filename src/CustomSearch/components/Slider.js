@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Slider = () => {
-    return (
-    <div className="slider">
-        <input type="range" min="0" max="100"/>
-    </div>
-    )
-}
+  const [range, setRange] = useState(50);
+  console.log(range);
 
-export default Slider
+  const handleOnChange = (e) => {
+    setRange(e.target.value);
+  };
+
+  return (
+    <div className="slider">
+      <input
+        type="range"
+        min={0}
+        max={100} //info dinamico passado por props
+        value={range}
+        onChange={handleOnChange}
+      />
+    </div>
+  );
+};
+
+export default Slider;
