@@ -1,22 +1,23 @@
-import React, {useState} from "react";
-import SearchBarButton from "./SearchBarButton";
+import React, { useState } from "react";
 
 const SearchBar = (props) => {
-  const[beerName, setBeerName] = useState([""])
+  const [searchText, setSearchText] = useState("");
 
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.onTermSubmit(searchText)
+  };
 
   return (
     <div>
-      <form onSubmit={(e) => e.preventDefault()}>
+      <form onSubmit={handleSubmit}>
         <div>
           <label>Beer: </label>
           <input
             type="text"
-            value={beerName}
-            onChange={(e) => setBeerName(e.target.value)}
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
           />
-          <SearchBarButton />
         </div>
       </form>
     </div>
