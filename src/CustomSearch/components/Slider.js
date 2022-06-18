@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-const Slider = () => {
-  const [range, setRange] = useState(50);
-  console.log(range);
+const Slider = (props) => {
+  const [range, setRange] = useState(100);
 
   const handleOnChange = (e) => {
     setRange(e.target.value);
+    
   };
 
   return (

@@ -5,13 +5,25 @@ import Slider from "./components/Slider";
 
 const CustomSearch = (props) => {
 
-  //função intermediaria para não chamar props diretamente 
+  const searchParams = {
+
+  };
+
+  const handleBeerName = (term) => {
+    searchParams.beer_name = term
+   // props.onCustomParamSubmit(searchParams)
+    props.onTermSubmit(term);
+    console.log(searchParams)
+  }
 
   //configurar cada slider com min e max range e passar para o componente slider.js
+
   return (
     <div>
-      <SearchBar onTermSubmit={props.onTermSubmit}/>
-      <Slider />
+      <SearchBar onTermSubmit={event => handleBeerName(event)}
+      />
+      <Slider //onSliderChange={}
+      />
       <Slider />
       <DropdownContainer />
     </div>

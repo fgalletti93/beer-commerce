@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { getBeers, getBeersByName } from "./api/api";
+import { getBeers, getBeersByName, getBeersByQuantifiers } from "./api/api";
 import CustomSearch from "./CustomSearch/CustomSearch";
 import ImageList from "./ImageList/ImageList";
 
-const App = () => {
+const App = (props) => {
+
   const [searchResults, setSearchResults] = useState([]);
 
   const onTermSubmit = (term) => {
@@ -12,15 +13,32 @@ const App = () => {
     .then((data) => setSearchResults(data))
   }
 
+  const onSliderValueChange = (quantifier, range) => {
+    getBeersByQuantifiers(quantifier, range) 
+      .then((response) => response.json())
+      .then((data) => setSearchResults(data))
+  }
+
+  // const onCustomParamSubmit = (object) => {
+  //   const keys = Object.keys(object) 
+  //   const labels = keys.forEach(label => console.log(object[label]))
+  //   return console.log(labels)
+  // }
+
+
   useEffect(() => {
-    getBeers()
+    getBeers('')
       .then((response) => response.json())
       .then((data) => setSearchResults(data));
   }, []); //passar props do customSearch
 
   return (
     <div>
-      <CustomSearch onTermSubmit={onTermSubmit}/>
+      <CustomSearch 
+        //onCustomParamSubmit={onCustomParamSubmit}
+        onTermSubmit={onTermSubmit} 
+        onSlideChange={onSliderValueChange}
+    />
       <ImageList beers={searchResults} />
     </div>
   );
