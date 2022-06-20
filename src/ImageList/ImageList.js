@@ -1,11 +1,12 @@
 import React from "react";
+import './style.scss'
 
 const ImageList = (props) => {
    const image = props.beers.map((image) => {
-     return <img key={image.id} src={image.image_url} alt="" /> ;
+     return <img className="image" key={image.id} src={image.image_url} alt="" /> ;
    });
 
-  return <div>{image}</div>;
+  return <div className="image-grid">{image}</div>;
 };
 
 export default ImageList;
