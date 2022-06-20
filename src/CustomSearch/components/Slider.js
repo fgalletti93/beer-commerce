@@ -5,11 +5,11 @@ const Slider = (props) => {
 
   const handleOnChange = (e) => {
     setRange(e.target.value);
-    
+    console.log(range)
   };
 
   return (
-    <div className="slider">
+    <div className="horizontal-slider">
       <input
         type="range"
         min={0}

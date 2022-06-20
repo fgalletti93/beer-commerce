@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import { getBeers, getBeersByName, getBeersByQuantifiers } from "./api/api";
 import CustomSearch from "./CustomSearch/CustomSearch";
 import ImageList from "./ImageList/ImageList";
+import './styles/style.scss'
 
-const App = (props) => {
+const App = () => {
 
   const [searchResults, setSearchResults] = useState([]);
 
