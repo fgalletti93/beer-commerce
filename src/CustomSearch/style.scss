@@ -1,2 +1,24 @@
-@import './components/styles/SearchBar.scss';
+.custom-search{
+    background: #1d1e20;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 18px;
+
+    .search-details {
+        display: flex;
+        justify-content: space-between;
+        color: white;
+    }
+
+    .horizontal-slider{
+        margin-left: 10px;
+    }
+
+    .dropdown-container {
+        margin-left: 10px;
+    }
+
+}
 

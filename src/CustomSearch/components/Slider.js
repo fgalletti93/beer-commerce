@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 
 const Slider = (props) => {
-  const [range, setRange] = useState(100);
+  const [range, setRange] = useState(props.min);
 
   const handleOnChange = (e) => {
     setRange(e.target.value);
-    console.log(range)
+    props.onSliderChange(e.target.value)
   };
 
   return (
     <div className="horizontal-slider">
+      {props.title}
       <input
         type="range"
-        min={0}
-        max={100} //info dinamico passado por props
+        min={props.min}
+        max={props.max}
         value={range}
         onChange={handleOnChange}
       />

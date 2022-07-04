@@ -1,0 +1,40 @@
+
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+    max-width: 100%;
+
+    .card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 5px;
+        border: 1px solid rgba(196, 196, 196, 0.449);
+        border-radius: 5px;
+    }
+
+    .card:hover{
+        opacity: 0.5;
+        border: 1px solid rgba(123, 123, 123, 0.728);
+    }
+
+    .image {
+        height: 350px;
+    }
+
+    .text-content {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .title {
+        font-size: large;
+    }
+
+    .info {
+        font-size: 18px;
+        word-wrap: break-word;
+    }
+
+}
