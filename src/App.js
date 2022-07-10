@@ -6,11 +6,11 @@ import "./styles/style.scss";
 
 const App = () => {
   const [searchResults, setSearchResults] = useState([]);
-
+ 
   const onTermSubmit = (term) => {
     getBeersByCustomSearch(term)
     .then((response) => response.json())
-    .then((data) => setSearchResults(data));
+    .then((data) => orderBy(data, term.order));
   };
 
   useEffect(() => {
@@ -19,9 +19,9 @@ const App = () => {
       .then((data) => setSearchResults(data));
   }, []); //passar props do customSearch
 
-  const orderBy = (option) => {
+  const orderBy = (data, option) => {
     if (option === "A-Z") {
-      const alphabeticalOrder = searchResults.sort((a, b) => {
+      const alphabeticalOrder = data.sort((a, b) => {
         const beerA = a.name.toUpperCase();
         const beerB = b.name.toUpperCase();
         if (beerA < beerB) {
@@ -35,7 +35,7 @@ const App = () => {
       setSearchResults([...alphabeticalOrder]);
     }
     if (option === "Z-A") {
-      const ReverseAlphabeticalOrder = searchResults.sort((a, b) => {
+      const ReverseAlphabeticalOrder = data.sort((a, b) => {
         const beerA = a.name.toUpperCase();
         const beerB = b.name.toUpperCase();
         if (beerA < beerB) {
@@ -49,25 +49,25 @@ const App = () => {
       setSearchResults([...ReverseAlphabeticalOrder]);
     }
     if (option === "Low to High ABV") {
-      const AbvLowToHigh = searchResults.sort((a, b) => {
+      const AbvLowToHigh = data.sort((a, b) => {
         return a.abv - b.abv;
       });
       setSearchResults([...AbvLowToHigh]);
     }
     if (option === "High to Low ABV") {
-      const AbvHighToLow = searchResults.sort((a, b) => {
+      const AbvHighToLow = data.sort((a, b) => {
         return b.abv - a.abv;
       });
       setSearchResults([...AbvHighToLow]);
     }
     if (option === "Low to High IBU") {
-      const IbuLowToHigh = searchResults.sort((a, b) => {
+      const IbuLowToHigh = data.sort((a, b) => {
         return a.ibu - b.ibu;
       });
       setSearchResults([...IbuLowToHigh]);
     }
     if (option === "High to Low IBU") {
-      const IbuHighToLow = searchResults.sort((a, b) => {
+      const IbuHighToLow = data.sort((a, b) => {
         return b.ibu - a.ibu;
       });
       setSearchResults([...IbuHighToLow]);
@@ -78,7 +78,6 @@ const App = () => {
   return (
     <div>
       <CustomSearch
-        onOrderedSearch={orderBy}
         onCustomParamSubmit={onTermSubmit}
       />
       <ImageList beers={searchResults} />

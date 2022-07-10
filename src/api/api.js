@@ -8,7 +8,7 @@ export function getBeersByCustomSearch(term) {
   let connector = "&";
   const keys = Object.keys(term);
   keys.forEach((label, index) => {
-    if(term[label]) { 
+    if(term[label] && label !== 'order') { 
       let param = `${label}=${term[label]}`;
       if (index < keys.length - 1) {
         param += `${connector}`

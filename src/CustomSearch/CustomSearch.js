@@ -7,7 +7,7 @@ import './style.scss'
 const CustomSearch = (props) => {
 
   const searchParams = useMemo(() => {
-    return {};
+    return {order: 'Order by:'};
   }, []);
 
   const handleBeerName = (term) => {
@@ -24,7 +24,11 @@ const CustomSearch = (props) => {
     searchParams.ibu_lt = range
     props.onCustomParamSubmit(searchParams)
   }
-  
+
+  const handleOrderBy = (option) => {
+    searchParams.order = option
+    props.onCustomParamSubmit(searchParams)
+  }
 
   return (
     <div className="custom-search">
@@ -33,7 +37,7 @@ const CustomSearch = (props) => {
       <Slider title={"ABV"} min={3} max={10} onSliderChange={handleAbvSlider}
       />
       <Slider title={"IBU"} min={0} max={140} onSliderChange={handleIbuSlider}/>
-      <DropdownContainer onOrderSelect={props.onOrderedSearch}/>
+      <DropdownContainer onOrderSelect={handleOrderBy}/>
       </div>
     </div>
   );
