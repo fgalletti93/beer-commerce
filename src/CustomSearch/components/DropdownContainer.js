@@ -12,7 +12,7 @@ const DropdownContainer = (props) => {
     <div className="dropdown-container">
       <select onChange={onOrderSelect}>
         {list.map((item) => {
-          return <option>{item}</option>;
+          return <option key={item}>{item}</option>;
         })}
       </select>
     </div>

@@ -10,7 +10,7 @@ const Slider = (props) => {
 
   return (
     <div className="horizontal-slider">
-      {props.title}
+      <label >{props.title}</label>
       <input
         type="range"
         min={props.min}
