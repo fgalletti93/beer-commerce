@@ -7,7 +7,7 @@ import './style.scss'
 const CustomSearch = (props) => {
 
   const searchParams = useMemo(() => {
-    return {order: 'Order by:'};
+    return {order: 'A-Z'};
   }, []);
 
   const handleBeerName = (term) => {
