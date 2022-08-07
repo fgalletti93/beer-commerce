@@ -5,13 +5,14 @@ const Slider = (props) => {
 
   const handleOnChange = (e) => {
     setRange(e.target.value);
-    props.onSliderChange(e.target.value)
+    props.onSliderChange(e.target.value);
   };
 
   return (
     <div className="horizontal-slider">
-      {props.title}
+      <label htmlFor={`horizontal-slider ${props.title}`}>{props.title}</label>
       <input
+        id={`horizontal-slider ${props.title}`}
         type="range"
         min={props.min}
         max={props.max}
