@@ -1,28 +1,25 @@
-.custom-search{
-    background: #1d1e20;
+.custom-search {
+  background: #1d1e20;
+  display: flex;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  justify-content: space-around;
+  align-items: center;
+  padding: 18px;
+
+  & > .search-details {
     display: flex;
-    flex-wrap: wrap;
-    //position: sticky;
-    //top: 0;
-    justify-content: space-around;
-    align-items: center;
-    padding: 18px;
+    justify-content: space-between;
+    color: white;
 
-    .search-details {
-        display: flex;
-        justify-content: space-between;
-        color: white;
-    }
-
-    .horizontal-slider{
-        margin-left: 10px;
+    .horizontal-slider {
+      margin-left: 10px;
     }
 
     .dropdown-container {
-        margin-left: 10px;
+      margin-left: 10px;
     }
-
+  }
 }
-
-//fix search component to top of page 
 
