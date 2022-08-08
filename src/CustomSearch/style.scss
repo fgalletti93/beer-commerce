@@ -2,6 +2,8 @@
     background: #1d1e20;
     display: flex;
     flex-wrap: wrap;
+    //position: sticky;
+    //top: 0;
     justify-content: space-around;
     align-items: center;
     padding: 18px;
@@ -21,4 +23,6 @@
     }
 
 }
+
+//fix search component to top of page 
 

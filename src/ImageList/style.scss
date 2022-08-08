@@ -1,40 +1,57 @@
-
 .image-container {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: auto;
-    max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto;
+  max-width: 100%;
 
-    .card{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 5px;
-        border: 1px solid rgba(196, 196, 196, 0.449);
-        border-radius: 5px;
-    }
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+    border: 1px solid rgba(196, 196, 196, 0.449);
+    border-radius: 5px;
+  }
 
-    .card:hover{
-        opacity: 0.5;
-        border: 1px solid rgba(123, 123, 123, 0.728);
-    }
+  .image {
+    height: 350px;
+    padding-top: 4px;
+  }
 
-    .image {
-        height: 350px;
-    }
+  .text-content {
+    margin-top: 10px;
+    text-align: center;
+  }
 
-    .text-content {
-        margin-top: 10px;
-        text-align: center;
-    }
+  .title {
+    font-size: large;
+  }
 
-    .title {
-        font-size: large;
-    }
+  .info {
+    font-size: 18px;
+    word-wrap: break-word;
+  }
 
-    .info {
-        font-size: 18px;
-        word-wrap: break-word;
-    }
+  .selected {
+    display: none;
+  }
+
+  .card:hover {
+    opacity: 0.5;
+    border: 1px solid rgba(123, 123, 123, 0.728);
+
+    .selected {
+        display: block;
+        position: absolute;
+        right: 0;
+        height: 100px;
+        width: 100px;
+        //remove opacity from seal
+      }
+  }
 
 }
+
+
+//father component relative and child component absolute which means it is positioned relative to the nearest positioned ancestor instead of relative to the viewport/ can overlap elements
