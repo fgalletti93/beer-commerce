@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import './styles/SearchBar.scss'
+import "./styles/SearchBar.scss";
 
-const SearchBar = (props) => {
+const SearchBar = ({ onTermSubmit }) => {
   const [searchText, setSearchText] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.onTermSubmit(searchText);
+    onTermSubmit(searchText);
   };
 
   return (
@@ -15,7 +15,7 @@ const SearchBar = (props) => {
         <div>
           <input
             type="text"
-            placeholder="..."
+            placeholder="Pilsens, lagers, stouts and more..."
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />

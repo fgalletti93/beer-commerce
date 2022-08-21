@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 
-const Slider = (props) => {
-  const [range, setRange] = useState(props.min);
+const Slider = ({ onSliderChange, min, max, title }) => {
+  const [range, setRange] = useState(min);
 
   const handleOnChange = (e) => {
     setRange(e.target.value);
-    props.onSliderChange(e.target.value);
+    onSliderChange(e.target.value);
   };
 
   return (
     <div className="horizontal-slider">
-      <label htmlFor={`horizontal-slider ${props.title}`}>{props.title}</label>
+      <label htmlFor={`horizontal-slider ${title}`}>{title}</label>
       <input
-        id={`horizontal-slider ${props.title}`}
+        id={`horizontal-slider ${title}`}
         type="range"
-        min={props.min}
-        max={props.max}
+        min={min}
+        max={max}
         value={range}
         onChange={handleOnChange}
       />
