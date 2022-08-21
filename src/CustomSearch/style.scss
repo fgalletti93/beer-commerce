@@ -7,6 +7,11 @@
   justify-content: space-around;
   align-items: center;
   padding: 18px;
+  z-index: 20;
+
+  & > .title {
+    color: white;
+  }
 
   & > .search-details {
     display: flex;
