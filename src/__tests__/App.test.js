@@ -22,10 +22,9 @@ describe("Test api call returning data", () => {
     getBeers.mockResolvedValueOnce({ json: () => payloadMock });
     render(<App/>);
     await waitFor(() => {
-      const image = screen.getByRole("img");
-      expect(image).toBeVisible();
+      const image = screen.getAllByRole("img");
+      expect(image[0]).toBeVisible();
     });
   });
 });
 
-//outra maneira de mokar
