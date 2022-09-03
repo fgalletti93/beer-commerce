@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { getBeers, getBeersByCustomSearch } from "../api/api";
-import { orderBy } from "./OrderBy";
+import { orderBy } from "../utils/OrderBy";
 
 const useFetchBeers = () => {
   const [searchResults, setSearchResults] = useState([]);
@@ -27,3 +27,6 @@ const useFetchBeers = () => {
 };
 
 export default useFetchBeers;
+
+
+//create useMemo for when parameters are set back to default 
