@@ -1,18 +1,24 @@
 import React, { useState } from "react";
-import Button from './Button'
+import Button from "./Button";
 import "./styles/SearchBar.scss";
+import clearIcon from "../../assets/clear-symbol-removebg-preview.png";
+import searchIcon from "../../assets/search-removebg-preview.png";
 
 const SearchBar = ({ onTermSubmit }) => {
   const [searchText, setSearchText] = useState("");
+  const [isSearch, setIsSearch] = useState(false);
 
   const handleSubmit = (e) => {
+    setIsSearch(true);
     e.preventDefault();
     onTermSubmit(searchText);
   };
 
   const handleClearSearch = () => {
-    setSearchText("")
-  }
+    setIsSearch(false)
+    setSearchText("");
+    onTermSubmit("");
+  };
 
   return (
     <div className="search-bar">
@@ -24,9 +30,8 @@ const SearchBar = ({ onTermSubmit }) => {
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
-          <Button 
-            onClick={handleClearSearch}
-          />
+          {isSearch && <Button icon={clearIcon} onClick={handleClearSearch}/>}
+          {!isSearch && <Button icon={searchIcon} onClick={handleSubmit}/>}
         </div>
       </form>
     </div>

@@ -1,14 +1,11 @@
-import clearIcon from "../../assets/clear-symbol-removebg-preview.png";
+
 import "./styles/Button.scss";
 
-const Button = ({ onClick }) => {
+const Button = ({ onClick, icon }) => {
   return (
-    <img
-      onClick={onClick}
-      className="clear-icon"
-      src={clearIcon}
-      alt="clear-button"
-    />
+    <button onClick={onClick}>
+      <img className="icon" src={icon} alt={`${icon}-icon`} />
+    </button>
   );
 };
 
