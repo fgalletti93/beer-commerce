@@ -36,18 +36,20 @@ const CustomSearch = ({ onCustomParamSubmit }) => {
       </h1>
       <SearchBar onTermSubmit={(event) => handleBeerName(event)} />
       <div className="search-details">
-        <Slider
-          title={"ABV"}
-          min={3}
-          max={10}
-          onSliderChange={handleAbvSlider}
-        />
-        <Slider
-          title={"IBU"}
-          min={0}
-          max={140}
-          onSliderChange={handleIbuSlider}
-        />
+        <div className="sliders">
+          <Slider
+            title={"ABV"}
+            min={3}
+            max={15}
+            onSliderChange={handleAbvSlider}
+          />
+          <Slider
+            title={"IBU"}
+            min={0}
+            max={140}
+            onSliderChange={handleIbuSlider}
+          />
+        </div>
         <DropdownContainer onOrderSelect={handleOrderBy} />
       </div>
     </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles/DropdownContainer.scss"
 
 const DropdownContainer = ({ onOrderSelect }) => {
   const list = [
@@ -16,7 +17,7 @@ const DropdownContainer = ({ onOrderSelect }) => {
 
   return (
     <div className="dropdown-container">
-      <select onChange={onOrderSelected}>
+      <select className="select-box" onChange={onOrderSelected}>
         <option disabled>Order by:</option>
         {list.map((item) => {
           return <option key={item}>{item}</option>;
