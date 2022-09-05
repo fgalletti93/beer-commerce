@@ -39,7 +39,7 @@ const CustomSearch = ({ onCustomParamSubmit }) => {
         <div className="sliders">
           <Slider
             title={"ABV"}
-            min={3}
+            min={0}
             max={15}
             onSliderChange={handleAbvSlider}
           />
