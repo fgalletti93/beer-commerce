@@ -9,13 +9,14 @@ const SearchBar = ({ onTermSubmit }) => {
   const [isSearch, setIsSearch] = useState(false);
 
   const handleSubmit = (e) => {
-    setIsSearch(true);
     e.preventDefault();
+    if(!searchText) return;
+    setIsSearch(true);
     onTermSubmit(searchText);
   };
 
   const handleClearSearch = () => {
-    setIsSearch(false)
+    setIsSearch(false);
     setSearchText("");
     onTermSubmit("");
   };
