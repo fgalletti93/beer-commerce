@@ -9,7 +9,7 @@ const useFetchBeers = () => {
     getBeersByCustomSearch(searchParam)
       .then((response) => response.json())
       .then((data) => {
-        const results: any = orderBy(data, searchParam.order);
+        const results = orderBy(data, searchParam.order);
         setSearchResults(results);
       });
   };
