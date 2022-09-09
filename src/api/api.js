@@ -2,6 +2,10 @@ export function getBeers() {
   return fetch(`https://api.punkapi.com/v2/beers?per_page=50`);
 }
 
+export function getBeerInfo(cardId) {
+  return fetch(`https://api.punkapi.com/v2/${cardId}`);
+}
+
 
 export function getBeersByCustomSearch(term) {
   let queryStrg = "";
