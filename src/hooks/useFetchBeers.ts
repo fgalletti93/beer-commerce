@@ -9,7 +9,7 @@ const useFetchBeers = () => {
     getBeersByCustomSearch(searchParam)
       .then((response) => response.json())
       .then((data) => {
-        const results = orderBy(data, searchParam.order);
+        const results: any = orderBy(data, searchParam.order);
         setSearchResults(results);
       });
   };
@@ -28,5 +28,3 @@ const useFetchBeers = () => {
 
 export default useFetchBeers;
 
-
-//create useMemo for when parameters are set back to default 

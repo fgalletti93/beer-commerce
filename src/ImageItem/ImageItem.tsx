@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import selected from "../assets/AdobeStock_303721216.png";
 import defaultImg from "../assets/defaultBeer.jpeg";
