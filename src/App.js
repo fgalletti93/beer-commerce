@@ -1,7 +1,7 @@
 import React from "react";
+import useFetchBeers from "./hooks/useFetchBeers";
 import CustomSearch from "./CustomSearch/CustomSearch";
 import ImageList from "./ImageList/ImageList";
-import useFetchBeers from "./hooks/useFetchBeers";
 import "./styles/style.scss";
 
 const App = () => {
