@@ -1,15 +1,15 @@
 import React from "react";
 import "./style.scss";
-import ImageItem from "../ImageItem/ImageItem";
+import BeerCard from "../BeerCard/BeerCard";
 
-const ImageList = ({ beers }) => {
+const BeerList = ({ beers }) => {
   const renderedList = beers.map((card) => {
     return (
-    <ImageItem key={card.id} card={card} />
+    <BeerCard key={card.id} card={card} />
     )
   });
 
   return <div className="image-container">{renderedList}</div>;
 };
 
-export default ImageList;
+export default BeerList;

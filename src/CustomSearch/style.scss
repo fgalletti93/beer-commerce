@@ -9,7 +9,12 @@
   padding: 10px;
   z-index: 20;
 
+  .title-link {
+    text-decoration: none;
+    color: inherit;
+  }
   .title {
+    text-decoration: none;
     color: #999;
     letter-spacing: 6px;
     padding: 14px;

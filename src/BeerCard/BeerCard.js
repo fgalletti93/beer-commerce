@@ -4,7 +4,7 @@ import selected from "../assets/AdobeStock_303721216.png";
 import defaultImg from "../assets/defaultBeer.jpeg";
 
 
-const ImageItem = ({ card }) => {
+const BeerCard = ({ card }) => {
 
   return (
     <Link to={`/beers/${card.id}`} className="card">
@@ -26,4 +26,4 @@ const ImageItem = ({ card }) => {
   );
 };
 
-export default ImageItem;
+export default BeerCard;

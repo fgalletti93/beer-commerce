@@ -1,4 +1,5 @@
 import React, { useMemo } from "react";
+import { Link } from "react-router-dom";
 import DropdownContainer from "./components/DropdownContainer";
 import SearchBar from "./components/SearchBar";
 import Slider from "./components/Slider";
@@ -32,7 +33,9 @@ const CustomSearch = ({ onCustomParamSubmit }) => {
   return (
     <div className="custom-search">
       <h1 className="title">
-        Beer <br /> Website.
+        <Link to={'/'} className="title-link">
+          Beer <br /> Website.
+        </Link>
       </h1>
       <SearchBar onTermSubmit={(event) => handleBeerName(event)} />
       <div className="search-details">

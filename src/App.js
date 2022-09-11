@@ -1,8 +1,10 @@
 import React from "react";
 import useFetchBeers from "./hooks/useFetchBeers";
 import CustomSearch from "./CustomSearch/CustomSearch";
-import ImageList from "./ImageList/ImageList";
+import BeerList from "./BeerList/BeerList";
+import Beer from "./BeerPage/BeerPage";
 import "./styles/style.scss";
+import { Routes, Route } from "react-router-dom";
 
 const App = () => {
   const { searchResults, onSearchParamSubmit } = useFetchBeers();
@@ -10,7 +12,10 @@ const App = () => {
   return (
     <div>
       <CustomSearch onCustomParamSubmit={onSearchParamSubmit} />
-      <ImageList beers={searchResults} />
+      <Routes>
+        <Route path="/" element={<BeerList beers={searchResults} />} />
+        <Route path={`/beers/:id`} element={<Beer />} />
+      </Routes>
     </div>
   );
 };

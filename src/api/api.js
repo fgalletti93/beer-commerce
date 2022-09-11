@@ -3,7 +3,7 @@ export function getBeers() {
 }
 
 export function getBeerInfo(cardId) {
-  return fetch(`https://api.punkapi.com/v2/${cardId}`);
+  return fetch(`https://api.punkapi.com/v2/beers/${cardId}`);
 }
 
 
