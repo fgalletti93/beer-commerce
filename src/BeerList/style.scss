@@ -2,8 +2,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(386px, 1fr));
   gap: 24px 18px;
-  margin: 24px;
-
+  padding: 24px;
+  background-color: rgba(153, 153, 153, 0.098);
 
   & > .card {
     position: relative;
@@ -16,6 +16,7 @@
     border-radius: 5px;
     text-decoration: none;
     color: inherit;
+    background-color: rgba(255, 255, 255, 0.84);
 
     & > .card-content {
       width: auto;
