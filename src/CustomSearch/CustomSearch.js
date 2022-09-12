@@ -32,11 +32,11 @@ const CustomSearch = ({ onCustomParamSubmit }) => {
 
   return (
     <div className="custom-search">
-      <h1 className="title">
-        <Link to={'/'} className="title-link">
+      <Link to={"/"} className="title-link">
+        <h1 className="title">
           Beer <br /> Website.
-        </Link>
-      </h1>
+        </h1>
+      </Link>
       <SearchBar onTermSubmit={(event) => handleBeerName(event)} />
       <div className="search-details">
         <div className="sliders">

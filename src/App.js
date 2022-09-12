@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import useFetchBeers from "./hooks/useFetchBeers";
 import CustomSearch from "./CustomSearch/CustomSearch";
 import BeerList from "./BeerList/BeerList";
-import Beer from "./BeerPage/BeerPage";
+import SelectedBeerPage from "./SelectedBeerPage/BeerPage";
 import "./styles/style.scss";
 
 const App = () => {
@@ -11,10 +11,10 @@ const App = () => {
 
   return (
     <div>
-      <CustomSearch onCustomParamSubmit={onSearchParamSubmit} />
+        <CustomSearch onCustomParamSubmit={onSearchParamSubmit} />
       <Routes>
         <Route path="/" element={<BeerList beers={searchResults} />} />
-        <Route path={"/beers/:id"} element={<Beer />} />
+        <Route path={"/beers/:id"} element={<SelectedBeerPage />} />
       </Routes>
     </div>
   );
