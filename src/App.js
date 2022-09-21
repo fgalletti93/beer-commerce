@@ -3,12 +3,12 @@ import { Routes, Route } from "react-router-dom";
 import useFetchBeers from "./hooks/useFetchBeers";
 import CustomSearch from "./CustomSearch/CustomSearch";
 import BeerList from "./BeerList/BeerList";
-import SelectedBeerPage from "./SelectedBeerPage/BeerPage";
+import SelectedBeerPage from "./SelectedBeerPage/SelectedBeerPage";
 import "./styles/style.scss";
 
 const App = () => {
   const { searchResults, onSearchParamSubmit } = useFetchBeers();
-
+  
   return (
     <div>
         <CustomSearch onCustomParamSubmit={onSearchParamSubmit} />

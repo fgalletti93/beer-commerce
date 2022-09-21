@@ -2,22 +2,21 @@ import { useEffect, useState } from "react";
 import { getBeerInfo } from "../api/api";
 import { useParams } from "react-router-dom";
 import BeerDetails from "./BeerDetails/BeerDetails";
+import './styles/BeerDetails.scss'
 
 const SelectedBeerPage = () => {
-  const [selectedBeer, setSelectedBeer] = useState([]);
+  const [selectedBeer, setSelectedBeer] = useState({});
   const { id } = useParams();
 
   useEffect(() => {
     getBeerInfo(id)
       .then((response) => response.json())
-      .then((data) => setSelectedBeer(data));
+      .then((data) => setSelectedBeer(data[0]));
   }, [id]);
 
-  const beer = selectedBeer.map((beerDetails) => {
-    return <BeerDetails beer={beerDetails} key={beerDetails.id} />;
-  });
-  
-  return <div>{beer}</div>;
+  console.log(selectedBeer);
+
+  return <BeerDetails beer={selectedBeer} />;
 };
 
 export default SelectedBeerPage;
