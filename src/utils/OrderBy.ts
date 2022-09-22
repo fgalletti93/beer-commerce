@@ -1,4 +1,4 @@
-export const orderBy = (data, option) => {
+export const orderBy = (data: Array<any>, option: string) => {
     if (option === "A-Z") {
       const alphabeticalOrder = data.sort((a, b) => {
         const beerA = a.name.toUpperCase();
