@@ -1,8 +1,10 @@
 import "@testing-library/jest-dom";
-import { orderBy } from "../OrderBy";
 import { beerFactory } from "../factory/beers";
+import { BeerFactoryType } from "../factory/types";
+import { orderBy } from "../OrderBy";
 
-const mockData = [beerFactory(), beerFactory(), beerFactory(), beerFactory()];
+
+const mockData: BeerFactoryType[] = [beerFactory(), beerFactory(), beerFactory(), beerFactory()];
 
 enum mockOption {
   A_Z = "A-Z",
