@@ -12,10 +12,10 @@ const BeerDetails = ({ beer }: Beer): ReactElement => {
         <h2>description</h2>
         {beer.description} <br />
         <hr />
-        <h3>Brewers tips</h3>
+        <h3>brewers tips</h3>
         {beer.brewers_tips} <br />
         <hr />
-        <h3>Food pairings</h3>
+        <h3>food pairings</h3>
         {beer.food_pairing?.map((food) => {
           return <p>{food}</p>;
         })}
