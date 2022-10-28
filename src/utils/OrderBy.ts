@@ -1,4 +1,4 @@
-import { PayloadObject } from "./types";
+import { PayloadObject } from "./type";
 
 export const orderBy = (data: PayloadObject[], option: string) => {
     if (option === "A-Z") {

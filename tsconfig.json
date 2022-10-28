@@ -1,11 +1,17 @@
 {
     "compilerOptions": {
-      "module": "commonjs",
-      "noImplicitAny": true,
+      "module": "CommonJS",
+      //"noImplicitAny": true,
       "removeComments": true,
       "preserveConstEnums": true,
-      "sourceMap": true
+      "sourceMap": true,
+      "allowSyntheticDefaultImports": true,
+      "strict": false,
+      "strictNullChecks": true,
+      "resolveJsonModule": true,
+      "jsx": "react-jsx",
+
     },
-    "include": ["src/**/*"],
+    "include": ["src/**/*", "src/utils/type.d.ts"],
     "exclude": ["node_modules", "**/*.spec.ts"]
   }

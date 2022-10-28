@@ -1,4 +1,4 @@
-import { PayloadObject } from "../types";
+import { PayloadObject } from "../type";
 
 export type BeerFactoryType = Pick<
   PayloadObject,

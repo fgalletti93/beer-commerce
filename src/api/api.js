@@ -1,13 +1,13 @@
-export function getBeers() {
+export const getBeers = () => {
   return fetch(`https://api.punkapi.com/v2/beers?per_page=80`);
 }
 
-export function getBeerInfo(cardId) {
+export const getBeerInfo = (cardId) => {
   return fetch(`https://api.punkapi.com/v2/beers/${cardId}`);
 }
 
 
-export function getBeersByCustomSearch(term) {
+export const getBeersByCustomSearch = (term) => {
   let queryStrg = "";
   let connector = "&";
   const keys = Object.keys(term);
